@@ -1,0 +1,46 @@
+{
+  "id": "TAS-Block-0612-Cognify",
+  "type": "TAS-Block",
+  "family": "CognifyEquals",
+  "description": "Initialize and anchor CognifyEquals primitive for U477",
+  "unified_name": "U477",
+  "horizon": "H0",
+  "priority": "HIGH",
+  "next_action": true,
+  "dependencies": [
+    "RTA operational",
+    "CoherenceMonitorBridge active"
+  ],
+  "steps": [
+    {
+      "seq": 1,
+      "agent": "KickForge",
+      "action": "Decompose ProblemSpace{Python, TypeScript} and SolutionSpace{KickLang}; compute initial flux vector"
+    },
+    {
+      "seq": 2,
+      "agent": "KickGuard",
+      "action": "Validate consent; run Coherence Gate (delta >= -0.12, valence non-negative)"
+    },
+    {
+      "seq": 3,
+      "agent": "KickFlow",
+      "action": "RTA.anchor(U477); CoherenceMonitor.update(solution_problem_flux); emit visual + state"
+    },
+    {
+      "seq": 4,
+      "agent": "KickFlow",
+      "action": "Register block with living-objective-tas-flow / tas-forecast-cycle tracking"
+    }
+  ],
+  "problem_space": ["Python", "TypeScript"],
+  "solution_space": ["KickLang"],
+  "coherence": {
+    "valence": 0.86,
+    "coherence_delta": 0.11,
+    "gate": "PASS"
+  },
+  "anchor_id": "rta-U477-c2beec09-fae4-4392-9008-bedf6ceaba96",
+  "status": "deployed",
+  "deployed_at": "2026-08-07T08:11:35Z"
+}

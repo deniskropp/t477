@@ -1,0 +1,40 @@
+%% CognifyEquals dual-space flux — Unified_Name_ U477
+%% Generated 2026-08-07T08:11:35Z · coherence_delta +0.11 · valence 0.86
+
+flowchart TB
+  subgraph PS["ProblemSpace"]
+    P1["Python"]
+    P2["TypeScript"]
+  end
+
+  subgraph SS["SolutionSpace"]
+    S1["KickLang"]
+  end
+
+  U["Unified_Name_<br/>U477"]
+
+  RTA["RTA.anchor(U477)"]
+  CM["CoherenceMonitor.update<br/>solution_problem_flux"]
+
+  P1 -->|"flux 0.82"| U
+  P2 -->|"flux 0.82"| U
+  S1 -->|"flux 0.78"| U
+
+  U -->|"bidirectional"| P1
+  U -->|"bidirectional"| P2
+  U -->|"bidirectional"| S1
+
+  U -->|"on_trigger"| RTA
+  U -->|"on_trigger"| CM
+  CM -->|"valence / delta<br/>feedback loop"| U
+  RTA -->|"anchor_id + graph pos"| U
+
+  classDef unified fill:#1a1a2e,stroke:#e94560,color:#eee,stroke-width:2px
+  classDef problem fill:#16213e,stroke:#0f3460,color:#e8e8e8
+  classDef solution fill:#0f3460,stroke:#533483,color:#e8e8e8
+  classDef monitor fill:#533483,stroke:#e94560,color:#fff
+
+  class U unified
+  class P1,P2 problem
+  class S1 solution
+  class RTA,CM monitor
