@@ -39,7 +39,8 @@ for rel in \
   references/bridge-spec.md \
   scripts/validate-skill.sh \
   scripts/mcp-discover.sh \
-  scripts/check-coherence.sh
+  scripts/check-coherence.sh \
+  scripts/test-bindings.sh
 do
   if [[ -f "$ROOT/$rel" ]]; then
     ok "$rel"
@@ -51,6 +52,10 @@ done
 for rel in \
   README.md \
   AGENTS.md \
+  u477_bridge.py \
+  u477Bridge.ts \
+  tsconfig.json \
+  scripts/test-bindings.sh \
   cognify-equals/U477.state.json \
   cognify-equals/U477.flux.mmd \
   cognify-equals/U477.kicklang.md \
@@ -71,6 +76,16 @@ if [[ -x "$ROOT/scripts/check-coherence.sh" ]]; then
   fi
 else
   die "check-coherence.sh not executable"
+fi
+
+if [[ -x "$PROJECT/scripts/test-bindings.sh" ]]; then
+  if "$PROJECT/scripts/test-bindings.sh" >/dev/null; then
+    ok "test-bindings dual-space self-test"
+  else
+    die "test-bindings dual-space self-test failed"
+  fi
+else
+  die "test-bindings.sh not executable"
 fi
 
 if [[ "$fail" -ne 0 ]]; then
