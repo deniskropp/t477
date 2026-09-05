@@ -138,10 +138,11 @@ This repo was seeded with:
 }
 ```
 
-To re-run or refine via the Grok skill:
+To re-run or refine via the Grok skills:
 
 ```text
-/cognify-equals
+/cognify-equals         # Generic CognifyEquals primitive skill
+/t477-cognify-equals    # Dedicated t477 / U477 Flow Nexus bridge skill
 ```
 
 then supply an updated `⫻data/obj` (new elements, re-flux, or additional consent).
